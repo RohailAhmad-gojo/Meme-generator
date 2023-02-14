@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import memesData from "../memesData"
 
 
 function Meme() {
-  function getMemeImage() {
+
+  const [memeImage, setMemeImage] = useState("")
+
+function getMemeImage() {
   const memesArray = memesData.data.memes
   const randomNumber = Math.floor(Math.random() * memesArray.length)
-  console.log(randomNumber)
-  const url = memesArray[randomNumber].url
-  console.log(url)
-  }
+  setMemeImage(memesArray[randomNumber].url)
+  
+}
   return (
     <main className='form-conatiner'>
         <div className='form-input'>
@@ -17,6 +19,7 @@ function Meme() {
             <input  placeholder='bottom text'/>
             <button onClick={getMemeImage}>get a new meme image</button>
         </div>
+        <img src={memeImage} alt='Meme panel' className='meme-image'/>
     </main>
   )
 }
