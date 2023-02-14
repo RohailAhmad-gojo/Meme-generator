@@ -54,7 +54,7 @@
   margin-bottom: 3%;
 }
 .form-conatiner button{
-  width: 887px;
+  max-width: 100% auto;
   background: rgb(103,34,128);
   background: linear-gradient(86deg, rgba(103,34,128,1) 20%, rgba(165,38,210,1) 75%);
   padding: 20px;
@@ -72,6 +72,54 @@
   background: linear-gradient(277deg, rgba(103,34,128,1) 20%, rgba(165,38,210,1) 75%);
 }
 .meme-image{
-  max-width: 100%;
+  max-width: 66%;
   margin: 3% 0;
+}
+
+
+/* ------------------------media------------------------------------------ */
+
+@media only screen and (max-width: 700px) {
+
+  .navbar-logo h3{
+    margin: 0 2%;
+    font-size: 1.3rem;
+    color: #fff;
+    margin-right: 100px;
+    font-weight: 500;
+    word-wrap: normal;
+  }
+  .navbar-logo img{
+    margin-left: 100px;
+    height: 40px;
+  }
+  .navbar-list h3{
+    font-size: 1.1rem;
+    color: #fff;
+    margin-right: 100px;
+    font-weight: 300;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .form-input input{
+    width: 300px;
+  }
+  .navbar-logo h3{
+    margin: 0 1%;
+    font-size: 1rem;
+    color: #fff;
+    margin-right: 50px;
+    font-weight: 500;
+    word-wrap: normal;
+  }
+  .navbar-logo img{
+    margin-left: 50px;
+    height: 30px;
+  }
+  .navbar-list h3{
+    font-size: 1rem;
+    color: #fff;
+    margin-right: 50px;
+    font-weight: 300;
+  }
 }

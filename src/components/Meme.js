@@ -16,7 +16,7 @@ function getMemeImage() {
     <main className='form-conatiner'>
         <div className='form-input'>
             <input  placeholder='top text'/>
-            <input  placeholder='bottom text'/>
+            <input  placeholder='bottom text'/><br/>
             <button onClick={getMemeImage}>get a new meme image</button>
         </div>
         <img src={memeImage} alt='Meme panel' className='meme-image'/>
