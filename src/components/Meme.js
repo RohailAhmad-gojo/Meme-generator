@@ -3,9 +3,7 @@ import memesData from "../memesData"
 
 
 function Meme() {
-
-  // const [memeImage, setMemeImage] = useState("")
-  const [meme , setMeme] = React.useState({
+  const [meme , setMeme] = useState({
     topText: "",
     bottomText: "",
     randomImage: "http://i.imgflip.com/1bij.jpg"
@@ -22,14 +20,35 @@ function getMemeImage() {
   }))
   
 }
+  function handleChange(event) {
+    const {name, value} = event.target
+    setMeme(prevMeme => ({
+      ...prevMeme,
+      [name]: value
+    }))
+  }
   return (
     <main className='form-conatiner'>
         <div className='form-input'>
-            <input  placeholder='top text'/>
-            <input  placeholder='bottom text'/><br/>
+            <input  
+              placeholder='top text'
+              name='topText'
+              value={meme.topText}
+              onChange={handleChange}
+            />
+            <input  
+              placeholder='bottom text'
+              name='bottomText'
+              value={meme.topBottom}
+              onChange={handleChange}
+            /><br/>
             <button onClick={getMemeImage}>get a new meme image</button>
         </div>
-        <img src={meme.randomImage} alt='Meme panel' className='meme-image'/>
+        <div className="meme">
+          <img src={meme.randomImage} alt='meme panal' className="meme-image" />
+          <h2 className="meme-text top">{meme.topText}</h2>
+          <h2 className="meme-text bottom">{meme.bottomText}</h2>        
+        </div>
     </main>
   )
 }
